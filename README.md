@@ -39,15 +39,14 @@ Repositório de ensaios comparativos de algoritmos de machine learning organizad
 
 | Passo | Descrição |
 |-------|-----------|
-| **Passo 1** | Divisão dos dados em treino, validação e teste |
-| **Passo 2** | Treinamento dos algoritmos com os dados de treinamento utilizando os parâmetros default |
-| **Passo 3** | Medir a performance dos algoritmos treinados com o parâmetro "default" no conjunto de treinamento |
-| **Passo 4** | Medir a performance dos algoritmos treinados com o parâmetro "default" no conjunto de validação |
-| **Passo 5** | Alternar os valores dos principais parâmetros que controlam o overfitting até encontrar o conjunto que apresente a melhor performance |
-| **Passo 6** | Unir os dados de treinamento e validação |
-| **Passo 7** | Retreinar o algoritmo com a união dos dados de treinamento e validação, utilizando os melhores parâmetros |
-| **Passo 8** | Medir a performance dos algoritmos treinados com os melhores parâmetros no conjunto de teste |
-| **Passo 9** | Avaliar os ensaios e anotar os 3 principais insights que se destacaram |
+| **Passo 1** | Treinar os algoritmos com os dados de treinamento utilizando os parâmetros default |
+| **Passo 2** | Medir a performance no conjunto de treinamento (parâmetros default) |
+| **Passo 3** | Medir a performance no conjunto de validação (parâmetros default) |
+| **Passo 4** | Ajustar os hiperparâmetros para encontrar o conjunto que minimize overfitting/underfitting |
+| **Passo 5** | Unir os dados de treinamento e validação |
+| **Passo 6** | Retreinar o algoritmo com a união dos dados e os melhores parâmetros encontrados |
+| **Passo 7** | Medir a performance final no conjunto de teste |
+| **Passo 9** | Quadro Comparativo — análise diagnóstica completa do ensaio |
 
 ---
 
@@ -124,12 +123,12 @@ ml_trials_algorithm/
 |---|----------------|-----------------|
 | 2 | 1017.83 | 0.2132 |
 | **3** | **829.04** | **0.2330** |
-| 4 | 750.89 | 0.2303 |
+| 4 | 750.15 | 0.2166 |
 | 5 | 681.87 | 0.1868 |
-| 6 | 624.26 | 0.2237 |
-| 7 | 581.17 | 0.1923 |
-| 8 | 535.98 | 0.1751 |
-| 9 | 511.06 | 0.1744 |
+| 6 | 622.37 | 0.2203 |
+| 7 | 568.97 | 0.2108 |
+| 8 | 533.33 | 0.1865 |
+| 9 | 505.89 | 0.1867 |
 | 10 | 477.39 | 0.1746 |
 
 > Melhor K: **K=3** (Silhouette = 0.2330)
@@ -162,25 +161,25 @@ ml_trials_algorithm/
 
 ---
 
-## 9. 🧠 Conclusões
+## 9. Conclusões
 
-### 🏆 Classificação
+### Classificação
 - **Random Forest** dominou com F1-Score de **0.9591**, seguido de perto pela Decision Tree (0.9489). Ambos os modelos baseados em árvore superaram regressão logística e KNN por larga margem, indicando que os dados possuem **fronteiras de decisão não-lineares** bem capturadas por métodos ensemble.
 - 📉 KNN teve desempenho fraco (F1 = 0.5647), possivelmente afetado pela maldição da dimensionalidade em um espaço de features de alta dimensão.
 
-### 📈 Regressão
+### Regressão
 - O desempenho geral foi modesto — **XGBoost** liderou com R² = **0.3678**, mas ainda deixa mais de 63% da variância inexplicada.
 - 🔍 Os R² baixos em todos os algoritmos sugerem que as features disponíveis têm **baixo poder preditivo** sobre o target ou que existem relações altamente ruidosas no dataset.
 - Algoritmos lineares (Linear Regression, Lasso, Ridge, ElasticNet) ficaram todos agrupados em torno de R² ≈ 0.051, sinalizando que a **linearidade não é suficiente** para capturar os padrões presentes.
 
-### 🔵 Clusterização
+### Clusterização
 - **KMeans com K=3** obteve o melhor Silhouette Score (0.2330), revelando **3 agrupamentos naturais** no dataset com separação razoável entre clusters.
 - Affinity Propagation com `preference=-50` gerou 7 clusters e Silhouette = 0.2023 — próximo do KMeans, mas com estrutura mais fragmentada e custo computacional maior.
 - ⚡ KMeans é a escolha recomendada: **mais eficiente** e com resultado ligeiramente superior.
 
 ---
 
-## 10. 🚀 Próximos Passos
+## 10. Próximos Passos
 
 ### Classificação
 - [ ] 🔧 Testar **XGBoost e LightGBM** para classificação — potencial de superar Random Forest com tuning adequado
