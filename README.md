@@ -2,7 +2,9 @@
 
 Repositório de ensaios comparativos de algoritmos de machine learning organizados em três categorias: **Classificação**, **Regressão** e **Clusterização**.
 
----
+<p align="center">
+<img src="./assets/img/fluxo.png" alt="Projeto Estratégico da BrasCo - Gaming Ltd" width="800px">
+</p>
 
 ## 1. Problema de Negócio
 
