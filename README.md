@@ -39,7 +39,7 @@ Repositório de ensaios comparativos de algoritmos de machine learning organizad
 | Categoria | Algoritmos | Métricas de Performance |
 |-----------|-----------|------------------------|
 | **Classificação** | KNN, Decision Tree, Random Forest, Logistic Regression | Accuracy, Precision, Recall, F1-Score |
-| **Regressão** | Linear Regression, Lasso, Ridge, ElasticNet, Polynomial (×3), Decision Tree, Random Forest, XGBoost, LightGBM | R², MSE, RMSE, MAE, MAPE |
+| **Regressão** | Linear Regression ( Lasso, Ridge, ElasticNet), Polynomial (Lasso, Ridge, ElasticNet), Decision Tree, Random Forest, XGBoost, LightGBM | R², MSE, RMSE, MAE, MAPE |
 | **Clusterização** | K-Means, Affinity Propagation | Silhouette Score |
 
 ### Ferramentas Utilizadas
@@ -75,7 +75,7 @@ Repositório de ensaios comparativos de algoritmos de machine learning organizad
 ml_trials_algorithm/
 ├── notebooks/
 │   ├── classificacao/       # KNN, Decision Tree, Logistic Regression, Random Forest
-│   ├── regressao/           # Linear, Lasso, Ridge, ElasticNet, Polynomial (×3), Decision Tree, Random Forest, XGBoost, LightGBM
+│   ├── regressao/           # Linear, Lasso, Ridge, ElasticNet, Polynomial, Lasso, Ridge, ElasticNet, Decision Tree, Random Forest, XGBoost, LightGBM
 │   └── clusterizacao/       # KMeans, Affinity Propagation
 └── dataset/
     ├── classification_datasets/
