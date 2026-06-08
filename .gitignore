@@ -219,3 +219,6 @@ __marimo__/
 
 # Claude Code
 .claude/
+
+# Guias internos
+GUIA_CORRECAO_NOTEBOOKS.md
